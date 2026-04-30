@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCorePro | Clinical Intelligence SaaS Demo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container flex justify-between align-center">
+            <div class="logo">
+                <i data-lucide="shield-plus" class="logo-icon"></i>
+                <span class="logo-text">MediCore<span>Pro</span></span>
+            </div>
+            
+            <button class="mobile-toggle" onclick="toggleMenu()">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <div class="nav-links" id="nav-links">
+                <a href="#features" onclick="toggleMenu()">Features</a>
+                <a href="#specialties" onclick="toggleMenu()">Specialties</a>
+                <a href="#gallery" onclick="toggleMenu()">Gallery</a>
+                <a href="#contact" onclick="toggleMenu()">Contact</a>
+                <a href="https://medi-core-pro.vercel.app/" class="btn-primary">Launch App</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container text-center">
+            <div class="badge-row">
+                <div class="badge">Next-Gen Medical SaaS</div>
+                <div class="india-badge">
+                    <svg width="20" height="15" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="900" height="600" fill="#f4c2c2"/>
+                        <rect width="900" height="200" fill="#FF9933"/>
+                        <rect y="200" width="900" height="200" fill="#FFFFFF"/>
+                        <rect y="400" width="900" height="200" fill="#128807"/>
+                        <circle cx="450" cy="300" r="80" fill="#000080"/>
+                        <circle cx="450" cy="300" r="70" fill="#FFFFFF"/>
+                        <circle cx="450" cy="300" r="10" fill="#000080"/>
+                        <g id="spikes">
+                            <line x1="450" y1="230" x2="450" y2="370" stroke="#000080" stroke-width="2"/>
+                            <line x1="380" y1="300" x2="520" y2="300" stroke="#000080" stroke-width="2"/>
+                        </g>
+                    </svg>
+                    <span>Proudly Made in India</span>
+                </div>
+            </div>
+            <h1>Clinical Intelligence <br><span class="gradient-text">Redefined</span></h1>
+            <p class="hero-desc">The enterprise-grade platform for modern clinics. Specialized for Dental, Ophthalmology, and General Medicine.</p>
+            <div class="hero-actions">
+                <a href="#demo" class="btn-lg">Watch the Demo</a>
+                <a href="https://medi-core-pro.vercel.app/" class="btn-outline">Live Sandbox</a>
+            </div>
+        </div>
+        <div class="hero-mockup">
+            <img src="assets/doctor_dashboard.png" alt="MediCorePro Dashboard" class="floating" onclick="openLightbox('assets/doctor_dashboard.png')">
+        </div>
+    </header>
+
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Engineered for Reliability</h2>
+                <p>We've built the foundation so you can focus on patient care.</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon bg-blue-light"><i data-lucide="history"></i></div>
+                    <h3>Immutable Audit Logs</h3>
+                    <p>Track every sensitive action with full "Before/After" snapshots. HIPAA-compliant design for total transparency.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon bg-emerald-light"><i data-lucide="zap"></i></div>
+                    <h3>Offline-Safe Auto-Save</h3>
+                    <p>Clinical data is saved every 2 seconds to local storage. Never lose a prescription due to a refresh or outage.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon bg-purple-light"><i data-lucide="users"></i></div>
+                    <h3>Multi-Tenant Architecture</h3>
+                    <p>Scalable SaaS design allows instant isolation for thousands of clinics on a single infrastructure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="specialties" class="specialties">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Clinical Specialty Modules</h2>
+                <p>Tailored interfaces for specialized healthcare practices.</p>
+            </div>
+            
+            <div class="specialty-gallery">
+                <div class="specialty-item" onclick="openLightbox('assets/dental_encounter.png')">
+                    <img src="assets/dental_encounter.png" alt="Dental Odontogram" class="gallery-img">
+                    <div class="gallery-info">
+                        <h3>Dental Intelligence</h3>
+                        <p>Interactive Odontogram with tooth-level clinical notes.</p>
+                    </div>
+                </div>
+                <div class="specialty-item" onclick="openLightbox('assets/eye_encounter.png')">
+                    <img src="assets/eye_encounter.png" alt="Ophthalmology Vision Grid" class="gallery-img">
+                    <div class="gallery-info">
+                        <h3>Vision & Refraction</h3>
+                        <p>Detailed refraction grid for OD/OS and VA assessments.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-2 align-center gap-4 mt-8">
+                <div class="specialty-content">
+                    <div class="badge-sm">Integrated Ecosystem</div>
+                    <h2>Billing & Prescription Lifecycle</h2>
+                    <p>Automate your clinic's revenue cycle and prescription history without switching apps.</p>
+                    <ul class="specialty-list">
+                        <li><i data-lucide="check-circle"></i> <strong>Professional Billing:</strong> Instant PDF invoices with tax and discount management.</li>
+                        <li><i data-lucide="check-circle"></i> <strong>Rx Repository:</strong> Track patient medication history across multiple visits.</li>
+                    </ul>
+                </div>
+                <div class="specialty-image" onclick="openLightbox('assets/billing_list.png')">
+                    <img src="assets/billing_list.png" alt="Billing Management" class="rounded-xl shadow-lg border">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="demo" class="demo-section bg-secondary">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Product Walkthroughs</h2>
+                <p>See how MediCorePro simplifies the workflow for both staff and doctors.</p>
+            </div>
+            
+            <div class="demo-tabs">
+                <div class="demo-tab active" data-target="doctor-demo">Doctor Workflow</div>
+                <div class="demo-tab" data-target="reception-demo">Receptionist Workflow</div>
+            </div>
+
+            <div class="demo-content">
+                <div id="doctor-demo" class="demo-pane active">
+                    <div class="video-container">
+                        <video autoplay loop muted playsinline src="assets/doctor_demo.webp"></video>
+                        <div class="video-overlay">
+                            <div class="overlay-card">
+                                <h4>Clinic Workspace</h4>
+                                <p>Manage the entire consultation from a single interactive panel.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="reception-demo" class="demo-pane">
+                    <div class="video-container">
+                        <video autoplay loop muted playsinline src="assets/receptionist_demo.webp"></video>
+                        <div class="video-overlay">
+                            <div class="overlay-card">
+                                <h4>Reception Dashboard</h4>
+                                <p>Seamless appointment booking and patient registration.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Product Gallery</h2>
+                <p>Click on any screen to explore the production-grade interface.</p>
+            </div>
+            
+            <div class="carousel-container">
+                <button class="carousel-btn prev" onclick="scrollGallery(-1)"><i data-lucide="chevron-left"></i></button>
+                <div class="screenshot-carousel" id="screenshot-carousel">
+                    <div class="screenshot-item" onclick="openLightbox('assets/doctor_dashboard.png')">
+                        <img src="assets/doctor_dashboard.png" alt="Doctor Dashboard">
+                        <span>Doctor Dashboard</span>
+                    </div>
+                    <div class="screenshot-item" onclick="openLightbox('assets/receptionist_dashboard.png')">
+                        <img src="assets/receptionist_dashboard.png" alt="Receptionist Dashboard">
+                        <span>Receptionist Dashboard</span>
+                    </div>
+                    <div class="screenshot-item" onclick="openLightbox('assets/dental_encounter.png')">
+                        <img src="assets/dental_encounter.png" alt="Dental Odontogram">
+                        <span>Dental Specialty</span>
+                    </div>
+                    <div class="screenshot-item" onclick="openLightbox('assets/eye_encounter.png')">
+                        <img src="assets/eye_encounter.png" alt="Vision Grid">
+                        <span>Eye Specialty</span>
+                    </div>
+                    <div class="screenshot-item" onclick="openLightbox('assets/billing_list.png')">
+                        <img src="assets/billing_list.png" alt="Billing System">
+                        <span>Billing & Invoicing</span>
+                    </div>
+                    <div class="screenshot-item" onclick="openLightbox('assets/audit_log.png')">
+                        <img src="assets/audit_log.png" alt="Audit Logs">
+                        <span>Security Audit Logs</span>
+                    </div>
+                    <div class="screenshot-item" onclick="openLightbox('assets/prescription_list.png')">
+                        <img src="assets/prescription_list.png" alt="Prescriptions">
+                        <span>Clinical Rx History</span>
+                    </div>
+                </div>
+                <button class="carousel-btn next" onclick="scrollGallery(1)"><i data-lucide="chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close-lightbox">&times;</span>
+        <img id="lightbox-img" src="" alt="Zoomed Screenshot">
+    </div>
+
+    <section class="audit-highlight">
+        <div class="container">
+            <div class="grid grid-2 align-center gap-4">
+                <div class="audit-image">
+                    <img src="assets/audit_log.png" alt="Audit Log Details" class="rounded-xl shadow-2xl border">
+                </div>
+                <div class="audit-text">
+                    <h2>Total Transparency</h2>
+                    <p>Our proprietary Audit Log system captures the state of the data before and after every edit. This ensures accountability and helps in resolving billing or clinical disputes.</p>
+                    <div class="audit-features">
+                        <div class="a-feat"><i data-lucide="shield-check"></i> Non-repudiation</div>
+                        <div class="a-feat"><i data-lucide="search"></i> Instant Search</div>
+                        <div class="a-feat"><i data-lucide="code"></i> Data Diffing</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section bg-secondary">
+        <div class="container">
+            <div class="grid grid-2 gap-4 align-center">
+                <div class="contact-text">
+                    <div class="badge-sm">Get in Touch</div>
+                    <h2>Ready to Digitization Your Clinic?</h2>
+                    <p>Contact Razel Tech for a personalized demo or to inquire about our white-label SaaS solutions.</p>
+                    <div class="contact-info">
+                        <div class="c-item">
+                            <i data-lucide="mail"></i>
+                            <span>razeltech.in@gmail.com</span>
+                        </div>
+                        <div class="c-item">
+                            <i data-lucide="map-pin"></i>
+                            <span>Guntur, Vijayawada</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-card">
+                    <form action="https://formspree.io/f/razeltech.in@gmail.com" method="POST" class="contact-form">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" name="name" placeholder="Dr. Sameer" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" name="email" placeholder="doctor@clinic.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>How can we help?</label>
+                            <textarea name="message" rows="4" placeholder="I'm interested in a demo for my Ophthalmology clinic..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-lg w-full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo mb-1">
+                        <i data-lucide="shield-plus" class="logo-icon"></i>
+                        <span class="logo-text">MediCore<span>Pro</span></span>
+                    </div>
+                    <p class="footer-tag">Empowering healthcare through clinical intelligence. A product of <strong>Razel Tech</strong>.</p>
+                    <div class="social-links">
+                        <a href="#"><i data-lucide="github"></i></a>
+                        <a href="#"><i data-lucide="linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <h4>Product</h4>
+                    <a href="#features">Features</a>
+                    <a href="#specialties">Specialties</a>
+                    <a href="#gallery">Screenshot Gallery</a>
+                    <a href="#demo">Video Walkthrough</a>
+                </div>
+                <div class="footer-nav">
+                    <h4>Company</h4>
+                    <a href="mailto:razeltech.in@gmail.com">Contact Us</a>
+                    <a href="#">About Razel Tech</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Support India</h4>
+                    <div class="india-badge small">
+                        <svg width="15" height="10" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="900" height="600" fill="#f4c2c2"/>
+                            <rect width="900" height="200" fill="#FF9933"/>
+                            <rect y="200" width="900" height="200" fill="#FFFFFF"/>
+                            <rect y="400" width="900" height="200" fill="#128807"/>
+                        </svg>
+                        <span>AtmaNirbhar Bharat</span>
+                    </div>
+                    <p class="mt-1 text-[10px] text-muted-foreground italic">Developed with passion in India.</p>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>© 2025 Razel Tech · All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Hamburger Menu
+        function toggleMenu() {
+            const nav = document.getElementById('nav-links');
+            nav.classList.toggle('active');
+        }
+
+        // Simple Tab Logic
+        const tabs = document.querySelectorAll('.demo-tab');
+        const panes = document.querySelectorAll('.demo-pane');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const target = tab.dataset.target;
+                
+                tabs.forEach(t => t.classList.remove('active'));
+                panes.forEach(p => p.classList.remove('active'));
+                
+                tab.classList.add('active');
+                document.getElementById(target).classList.add('active');
+            });
+        });
+
+        // Lightbox Logic
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            const lbImg = document.getElementById('lightbox-img');
+            lbImg.src = src;
+            lb.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scroll
+        }
+
+        function closeLightbox() {
+            const lb = document.getElementById('lightbox');
+            lb.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Carousel Scroll
+        function scrollGallery(direction) {
+            const carousel = document.getElementById('screenshot-carousel');
+            const scrollAmount = carousel.clientWidth * 0.8;
+            carousel.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
