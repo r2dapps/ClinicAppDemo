@@ -387,6 +387,21 @@
                 img.style.filter = 'grayscale(0.5) blur(2px)';
             }
         }
+
+        function closeLightbox() {
+            const lb = document.getElementById('lightbox');
+            lb.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function scrollGallery(direction) {
+            const carousel = document.getElementById('screenshot-carousel');
+            const scrollAmount = carousel.clientWidth * 0.8;
+            carousel.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
     </script>
 </body>
 </html>
