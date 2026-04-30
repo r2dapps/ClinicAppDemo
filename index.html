@@ -145,22 +145,32 @@
             <div class="demo-content">
                 <div id="doctor-demo" class="demo-pane active">
                     <div class="video-container">
-                        <img class="video-player" src="assets/doctor_demo.webp" alt="Doctor Workflow Demo">
+                        <img id="doctor-player" class="video-player" src="assets/doctor_demo.webp" alt="Doctor Workflow Demo">
+                        <div class="player-controls">
+                            <button class="ctrl-btn" onclick="togglePlay('doctor-player')"><i data-lucide="play"></i></button>
+                            <button class="ctrl-btn" onclick="restartVideo('doctor-player')"><i data-lucide="rotate-ccw"></i></button>
+                            <span class="player-label">Full Walkthrough</span>
+                        </div>
                         <div class="video-overlay">
                             <div class="overlay-card">
                                 <h4>Clinic Workspace</h4>
-                                <p>Manage the entire consultation from a single interactive panel.</p>
+                                <p>Appointments, Rx, and Audit Trails.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div id="reception-demo" class="demo-pane">
                     <div class="video-container">
-                        <img class="video-player" src="assets/receptionist_demo.webp" alt="Receptionist Workflow Demo">
+                        <img id="reception-player" class="video-player" src="assets/receptionist_demo.webp" alt="Receptionist Workflow Demo">
+                        <div class="player-controls">
+                            <button class="ctrl-btn" onclick="togglePlay('reception-player')"><i data-lucide="play"></i></button>
+                            <button class="ctrl-btn" onclick="restartVideo('reception-player')"><i data-lucide="rotate-ccw"></i></button>
+                            <span class="player-label">Entry Workflow</span>
+                        </div>
                         <div class="video-overlay">
                             <div class="overlay-card">
                                 <h4>Reception Dashboard</h4>
-                                <p>Seamless appointment booking and patient registration.</p>
+                                <p>Booking, Registration, and Billing.</p>
                             </div>
                         </div>
                     </div>
@@ -357,20 +367,21 @@
             document.body.style.overflow = 'hidden'; // Prevent scroll
         }
 
-        function closeLightbox() {
-            const lb = document.getElementById('lightbox');
-            lb.classList.remove('active');
-            document.body.style.overflow = 'auto';
+        function restartVideo(id) {
+            const img = document.getElementById(id);
+            const src = img.src.split('?')[0];
+            img.src = src + '?t=' + new Date().getTime(); // Force reload to restart animation
         }
 
-        // Carousel Scroll
-        function scrollGallery(direction) {
-            const carousel = document.getElementById('screenshot-carousel');
-            const scrollAmount = carousel.clientWidth * 0.8;
-            carousel.scrollBy({
-                left: direction * scrollAmount,
-                behavior: 'smooth'
-            });
+        function togglePlay(id) {
+            const img = document.getElementById(id);
+            if (img.classList.contains('paused')) {
+                img.classList.remove('paused');
+                img.style.filter = 'none';
+            } else {
+                img.classList.add('paused');
+                img.style.filter = 'grayscale(0.5) blur(2px)';
+            }
         }
     </script>
 </body>
